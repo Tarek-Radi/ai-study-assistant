@@ -1,0 +1,17 @@
+# Core LLM client
+openai
+
+# Validation and structured schemas
+pydantic
+
+# Chat UI
+streamlit
+
+# Embeddings / semantic search
+sentence-transformers
+
+# Vector similarity search
+faiss-cpu
+
+# Testing
+pytest
