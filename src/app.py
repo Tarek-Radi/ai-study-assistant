@@ -1,4 +1,4 @@
-from llm import chat
+from src.llm import chat
 
 SYSTEM_PROMPT = """
 You are an AI Study Assistant.

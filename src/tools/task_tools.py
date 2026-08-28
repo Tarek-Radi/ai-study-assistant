@@ -3,8 +3,7 @@ from typing import Any
 
 from pydantic import BaseModel, Field
 
-from database import task_repository
-
+from src.database import task_repository
 
 # ---------------------------------------------------------
 # Input validation models
