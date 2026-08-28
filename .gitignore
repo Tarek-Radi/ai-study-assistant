@@ -52,3 +52,6 @@ vector_store/
 build/
 dist/
 *.egg-info/
+
+# Enviroment
+.env

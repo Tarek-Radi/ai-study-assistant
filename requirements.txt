@@ -1,8 +1,14 @@
-# Core LLM client
-openai
+# Local LLM client
+ollama
 
 # Validation and structured schemas
 pydantic
+
+# PostgreSQL
+psycopg[binary]
+
+# Environment variables
+python-dotenv
 
 # Chat UI
 streamlit
