@@ -3,19 +3,26 @@ from sentence_transformers import SentenceTransformer
 
 MODEL_NAME = "all-MiniLM-L6-v2"
 
+_embedding_model: SentenceTransformer | None = None
 
-def load_embedding_model() -> SentenceTransformer:
-    """Load and return the embedding model."""
 
-    return SentenceTransformer(MODEL_NAME)
+def get_embedding_model() -> SentenceTransformer:
+    """Load the embedding model once and reuse it."""
+
+    global _embedding_model
+
+    if _embedding_model is None:
+        _embedding_model = SentenceTransformer(MODEL_NAME)
+
+    return _embedding_model
 
 
 def generate_embeddings(
     texts: list[str],
 ) -> list[list[float]]:
-    """Generate embeddings for a list of texts."""
+    """Generate normalized embeddings for a list of texts."""
 
-    model = load_embedding_model()
+    model = get_embedding_model()
 
     embeddings = model.encode(
         texts,
@@ -26,8 +33,8 @@ def generate_embeddings(
 
 
 if __name__ == "__main__":
-    from src.rag.document_loader import load_text_files
     from src.rag.chunker import chunk_documents
+    from src.rag.document_loader import load_text_files
 
     documents = load_text_files()
     chunks = chunk_documents(documents)
