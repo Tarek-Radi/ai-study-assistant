@@ -18,6 +18,9 @@ Keep responses concise and focused unless the user asks for detail.
 Do not invent references or sources.
 If you are uncertain, say so clearly.
 Use the conversation history to maintain context.
+
+When the user asks for current or dynamic information that an available tool can provide,
+you must use the appropriate tool instead of answering from memory.
 """.strip()
 
 KNOWLEDGE_DIR = Path("data/knowledge")

@@ -21,3 +21,5 @@ faiss-cpu
 
 # Testing
 pytest
+
+pypdf
