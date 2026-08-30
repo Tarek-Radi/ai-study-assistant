@@ -23,7 +23,7 @@ from src.tools.task_tools import (
 
 
 MODEL_NAME = "qwen3:1.7b"
-MAX_TOOL_ITERATIONS = 5
+MAX_TOOL_ITERATIONS = 5 ##*****************************************************************##
 
 
 # ---------------------------------------------------------
