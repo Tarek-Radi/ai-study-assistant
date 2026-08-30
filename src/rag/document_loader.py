@@ -2,6 +2,7 @@ from pathlib import Path
 
 from pypdf import PdfReader
 
+#### Choice pdf or txt in rag/retriever.py
 
 KNOWLEDGE_DIR = Path("data/knowledge")
 
