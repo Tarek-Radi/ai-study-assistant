@@ -8,15 +8,23 @@ def split_sentences(text: str) -> list[str]:
     sentences = re.split(r"(?<=[.!?؟])\s+", text.strip()) #######****Important***##############<========
 
     return [
-        sentence.strip()
-        for sentence in sentences
-        if sentence.strip()
+        sentence.strip()                # VALUE = result.append(sentence.strip()) appended there
+        for sentence in sentences       # for item in items
+        if sentence.strip()             # if CONDITION
+        #================================================= Exact Equal 
+        # cleaned_sentences = []
+        # for sentence in sentences:
+        #     if sentence.strip():
+        #         cleaned_sentences.append(
+        #             sentence.strip()
+        #         )
+        # return cleaned_sentences
     ]
 
 
 def chunk_text(
     text: str,
-    chunk_size: int = 500,
+    chunk_size: int = 500,    #############
     overlap_sentences: int = 1,
 ) -> list[str]:
     """Split text into sentence-aware overlapping chunks."""

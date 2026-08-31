@@ -149,3 +149,14 @@ def chat(messages: list[dict]) -> str:
 
     except Exception as error:
         return f"LLM error: {error}"
+    
+    
+#       316  python3 -m venv .venv
+#   317  source .venv/bin/activate
+#   318  python -m pip install --upgrade pip
+#   319  pip install -r requirements.txt
+#   231  rm -rf .venv
+#   232  python3 -m venv .venv
+#   233  source .venv/bin/activate
+#   234  pip install -r requirements.txt
+#   235  python --version

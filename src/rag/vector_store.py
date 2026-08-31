@@ -5,7 +5,7 @@ import numpy as np
 
 from src.rag.embeddings import generate_embeddings
 
-
+# convert Python list (List[list[float32]]) to Numpy array to deal with FAISS 
 def build_faiss_index(
     embeddings: list[list[float]],
 ) -> faiss.IndexFlatIP:
