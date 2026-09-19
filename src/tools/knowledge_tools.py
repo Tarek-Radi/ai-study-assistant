@@ -1,5 +1,6 @@
 from typing import Any
 
+import src
 from src.rag.retriever import (
     build_retriever,
     retrieve,
@@ -30,3 +31,32 @@ def search_knowledge_base(
         "count": len(results),
         "results": results,
     }
+    
+SEARCH_KNOWLEDGE_BASE_TOOL = {
+    "type": "function",
+    "function": {
+        "name": "search_knowledge_base",
+        "description": (
+            "Search the user's uploaded study materials and knowledge base. "
+            "You MUST use this tool whenever the user asks about their "
+            "study material, uploaded documents, PDFs, notes, knowledge base, "
+            "or says 'according to my study material'. "
+            "Do not answer those questions from general model knowledge."
+        ),
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "query": {
+                    "type": "string",
+                    "description": "The user's question to search for.",
+                },
+                "top_k": {
+                    "type": "integer",
+                    "description": "Maximum number of relevant chunks to return.",
+                    "default": 3,
+                },
+            },
+            "required": ["query"],
+        },
+    },
+}

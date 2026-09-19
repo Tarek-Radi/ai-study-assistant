@@ -19,8 +19,20 @@ Do not invent references or sources.
 If you are uncertain, say so clearly.
 Use the conversation history to maintain context.
 
-When the user asks for current or dynamic information that an available tool can provide,
-you must use the appropriate tool instead of answering from memory.
+When the user asks about:
+- their study material
+- uploaded files
+- uploaded PDFs
+- notes
+- the knowledge base
+- information "according to my material"
+
+you MUST use the search_knowledge_base tool before answering.
+
+Do not answer questions about the user's study material from your own knowledge.
+
+When the user asks for current or dynamic information that an available
+tool can provide, use the appropriate tool instead of answering from memory.
 """.strip()
 
 KNOWLEDGE_DIR = Path("data/knowledge")

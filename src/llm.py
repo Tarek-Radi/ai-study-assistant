@@ -7,6 +7,10 @@ from src.tools.basic_tools import (
     GET_CURRENT_DATE_TOOL,
     TOOL_REGISTRY as BASIC_TOOL_REGISTRY,
 )
+from src.tools.knowledge_tools import (
+    SEARCH_KNOWLEDGE_BASE_TOOL,
+    search_knowledge_base,
+)
 
 from src.tools.task_schemas import TASK_TOOLS
 
@@ -33,8 +37,8 @@ MAX_TOOL_ITERATIONS = 5 ##******************************************************
 TOOLS = [
     GET_CURRENT_DATE_TOOL,
     *TASK_TOOLS,
+    SEARCH_KNOWLEDGE_BASE_TOOL,
 ]
-
 
 # ---------------------------------------------------------
 # Tool registry
@@ -50,6 +54,7 @@ TOOL_REGISTRY = {
     "update_task": update_task,
     "update_task_due_date": update_task_due_date,
     "delete_task": delete_task,
+    "search_knowledge_base": search_knowledge_base,
 }
 
 
