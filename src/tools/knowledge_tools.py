@@ -26,6 +26,17 @@ def search_knowledge_base(
         min_score=0.4,
     )
 
+    if not results:
+        return {
+            "query": query,
+            "count": 0,
+            "message": (
+                "No relevant information was found "
+                "in the study material."
+            ),
+            "results": [],
+        }
+
     return {
         "query": query,
         "count": len(results),
