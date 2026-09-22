@@ -25,6 +25,16 @@ from src.tools.task_tools import (
     delete_task,
 )
 
+from src.tools.memory_tools import (
+    SAVE_USER_MEMORY_TOOL,
+    GET_USER_MEMORY_TOOL,
+    LIST_USER_MEMORIES_TOOL,
+    DELETE_USER_MEMORY_TOOL,
+    save_user_memory,
+    get_user_memory,
+    list_user_memories,
+    delete_user_memory,
+)
 
 MODEL_NAME = "qwen3:1.7b"
 MAX_TOOL_ITERATIONS = 5 ##*****************************************************************##
@@ -38,6 +48,10 @@ TOOLS = [
     GET_CURRENT_DATE_TOOL,
     *TASK_TOOLS,
     SEARCH_KNOWLEDGE_BASE_TOOL,
+    SAVE_USER_MEMORY_TOOL,
+    GET_USER_MEMORY_TOOL,
+    LIST_USER_MEMORIES_TOOL,
+    DELETE_USER_MEMORY_TOOL,
 ]
 
 # ---------------------------------------------------------
@@ -46,6 +60,7 @@ TOOLS = [
 
 TOOL_REGISTRY = {
     **BASIC_TOOL_REGISTRY,
+
     "add_task": add_task,
     "list_tasks": list_tasks,
     "get_task": get_task,
@@ -54,9 +69,14 @@ TOOL_REGISTRY = {
     "update_task": update_task,
     "update_task_due_date": update_task_due_date,
     "delete_task": delete_task,
-    "search_knowledge_base": search_knowledge_base,
-}
 
+    "search_knowledge_base": search_knowledge_base,
+
+    "save_user_memory": save_user_memory,
+    "get_user_memory": get_user_memory,
+    "list_user_memories": list_user_memories,
+    "delete_user_memory": delete_user_memory,
+}
 
 # ---------------------------------------------------------
 # Response cleaning
